@@ -24,18 +24,7 @@ command -v jq > /dev/null 2>&1 || { echo >&2 "jq not installed. More info: https
 
 if [ $WILL_START_FRESH -eq 1 ];
 
-function check_missing_english_page() {
-  local page=$1
-  local english_page="pages/${page#pages*\/}"
 
-  if [[ "$page" = "$english_page" ]]; then
-    return 1
-  fi
-  
-  if [[ ! -f "$english_page" ]]; then
-    printf "\x2d $MSG_NOT_EXISTS" "$page" "$english_page"
-  fi
-}
 
 then
     # $@ is for getting list of arguments
